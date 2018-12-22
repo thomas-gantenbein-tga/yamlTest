@@ -1,0 +1,11 @@
+roles:
+  - name: "Admins"
+    home: "/test/test"
+    addresses:
+      - "here"
+      - "there"
+  - name: "Others"
+    home: "/asdf/asdf"
+    addresses:
+      - "daada"
+      - "dasdfeasse"
