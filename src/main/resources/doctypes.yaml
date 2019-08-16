@@ -19,6 +19,11 @@ documentMetaDataDefinitions:
           ruleData:
             regex: "Kundennummer: (\\d*)"
             groupNumber: 1
+      - name: parentFolder
+        ruleDefinition:
+          ruleType: static
+          ruleData:
+            value: /RootFolder
       - name: Archiviert
         ruleDefinition:
          ruleType: ifFoundThenReturnValue

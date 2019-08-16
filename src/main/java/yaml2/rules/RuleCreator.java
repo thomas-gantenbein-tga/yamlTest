@@ -41,6 +41,10 @@ public class RuleCreator {
 			int regexGroup = (int) ruleDefinition.getRuleData().get("groupNumber");
 			return new RegexValueRule(regex, regexGroup);
 		}
+		case "static": {
+			Object returnValue = ruleDefinition.getRuleData().get("value");
+			return new StaticRule(returnValue);
+		}
 		default:
 			throw new IllegalArgumentException("Unsupported rule type '" + ruleType + "'. Consider extending class '"
 					+ this.getClass().getCanonicalName() + "'");
