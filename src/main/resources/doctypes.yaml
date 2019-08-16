@@ -1,0 +1,41 @@
+docTypeClassifications:
+  - ruleDefinition:
+      ruleType: ifFoundThenReturnValue
+      ruleData:
+        regex: asdf
+        returnValue: abrechnung
+  - ruleDefinition:
+      ruleType: ifFoundThenReturnHit
+      ruleData:
+        regex: "Dokumenttyp: ([^ ]*)"
+        groupNumber: 1
+        
+documentMetaDataDefinitions:
+  - documentType: abrechnung
+    metaData:
+      - name: Kundennummer
+        ruleDefinition:
+          ruleType: ifFoundThenReturnHit
+          ruleData:
+            regex: "Kundennummer: (\\d*)"
+            groupNumber: 1
+      - name: Archiviert
+        ruleDefinition:
+         ruleType: ifFoundThenReturnValue
+         ruleData:
+           regex: "Archiviert am:"
+           returnValue: true
+  - documentType: ganzEgal
+    metaData:
+      - name: Kundennummer
+        ruleDefinition:
+          ruleType: ifFoundThenReturnHit
+          ruleData:
+            regex: "Kundennummer: (\\d*)"
+            groupNumber: 1
+      - name: Archiviert
+        ruleDefinition:
+         ruleType: ifFoundThenReturnValue
+         ruleData:
+           regex: "Archiviert am:"
+           returnValue: true   
